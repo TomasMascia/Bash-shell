@@ -2,6 +2,7 @@
 # Trabajo practico de linux y bash
 # Autor: Tomás Mascia
 
+
 #---------------------------------- ACTUALIZAR -----------------------------------
 # Esta funcion actualiza el sistema.
 
@@ -9,7 +10,7 @@ actualizar_sistema(){
     echo "Actualizando sistema..."
     sudo apt update && sudo apt upgrade -y
     echo -e "\n"
-    read -n 1 -s -r -p "Presione ENTER para continuar."
+    read -n 1 -s -r -p "continuar..."
 }
 
 
@@ -19,7 +20,7 @@ actualizar_paquetes_lista(){
     echo "Lista de paquetes para actualizar:"
     sudo apt list --upgradable
     echo -e "\n"
-    read -n 1 -s -r -p "Presione ENTER para continuar."
+    read -n 1 -s -r -p "continuar..."
 }
 
 
@@ -29,7 +30,7 @@ limpiar_cache(){
     echo "Limpiando archivos no necesitados y no deseados..."
     sudo apt clean && sudo apt autoremove
     echo -e "\n"
-    read -n 1 -s -r -p "Presione ENTER para continuar."
+    read -n 1 -s -r -p "continuar..."
 }
 
 
@@ -40,7 +41,7 @@ crear_directorio(){
     echo "Creando el directorio $1"
     mkdir "$1"
     echo -e "\n"
-    read -n 1 -s -r -p "Presione ENTER para continuar."
+    read -n 1 -s -r -p "continuar..."
 }
 
 
@@ -50,7 +51,7 @@ crear_archivo(){
     echo "Creando el archivo $1"
     touch "$1"
     echo -e "\n"
-    read -n 1 -s -r -p "Presione ENTER para continuar."
+    read -n 1 -s -r -p "continuar..."
 }
 
 
@@ -60,7 +61,7 @@ cd_directorio(){
     echo "Entrando al directorio $1"
     cd "$1"
     echo -e "\n"
-    read -n 1 -s -r -p "Presione ENTER para continuar."
+    read -n 1 -s -r -p "continuar..."
 }
 
 
@@ -70,7 +71,7 @@ copiar_archivo(){
     echo "Copiando el contenido de $1 y poniendolo en $2"
     cp $1 $2
     echo -e "\n"
-    read -n 1 -s -r -p "Presione ENTER para continuar."
+    read -n 1 -s -r -p "continuar..."
 }
 
 
@@ -80,7 +81,7 @@ comprime_archivos(){
     echo "Comprimiendo los archivos..."
     tar -cvzf $1 $2
     echo -e "\n"
-    read -n 1 -s -r -p "Presione ENTER para continuar."
+    read -n 1 -s -r -p "continuar..."
 }
 
 
@@ -90,7 +91,7 @@ mover_archivos(){
     echo "Moviendo $1 a $2"
     mv $1 $2
     echo -e "\n"
-    read -n 1 -s -r -p "Presione ENTER para continuar."
+    read -n 1 -s -r -p "continuar..."
 }
 
 
@@ -100,7 +101,7 @@ descomprime_archivos(){
     echo "Descomprimiendo los archivos..."
     tar -xvzf $1
     echo -e "\n"
-    read -n 1 -s -r -p "Presione ENTER para continuar."
+    read -n 1 -s -r -p "continuar..."
 }
 
 
@@ -112,7 +113,7 @@ funcion_fecha(){
     echo "La fecha es: "
     date "+%d/%m/%Y %T"
     echo -e "\n"
-    read -n 1 -s -r -p "Presione ENTER para continuar."
+    read -n 1 -s -r -p "continuar..."
 }
 
 
@@ -122,7 +123,7 @@ ubicacion(){
     echo "La ubicacion es: "
     pwd
     echo -e "\n"
-    read -n 1 -s -r -p "Presione ENTER para continuar"
+    read -n 1 -s -r -p "continuar..."
 }
 
 
@@ -132,7 +133,7 @@ nombre_usuario(){
     echo "El nombre del usuario es:"
     whoami
     echo -e "\n"
-    read -n 1 -s -r -p "Presione ENTER para continuar"
+    read -n 1 -s -r -p "continuar..."
 }
 
 
@@ -142,7 +143,7 @@ informacion_SO(){
     echo "El sistema Operativo y sus caracateristicas:"
     uname -a
     echo -e "\n"
-    read -n 1 -s -r -p "Presione ENTER para continuar"
+    read -n 1 -s -r -p "continuar..."
 }
 
 # Esta funcion muestra en pantalla el uso del disco
@@ -151,7 +152,7 @@ info_disco(){
     echo "El uso del disco:"
     df -h
     echo -e "\n"
-    read -n 1 -s -r -p "Presione ENTER para continuar"
+    read -n 1 -s -r -p "continuar..."
 }
 
 
@@ -161,7 +162,7 @@ mostrar_procesos(){
     echo "Los tres procesos con mayor consumo son:"
     ps -eo user,pid,%mem,stat --sort=-%mem | head -n 4
     echo -e "\n"
-    read -n 1 -s -r -p "Presione ENTER para continuar"
+    read -n 1 -s -r -p "continuar..."
 }
 
 
@@ -171,7 +172,7 @@ guardar_historial(){
     echo "El historial de comandos es el siguiente: "
     history > linux-bootcamp-we/history-linux.txt
     echo -e "\n"
-    read -n 1 -s -r -p "Presione ENTER para continuar"
+    read -n 1 -s -r -p "continuar..."
 }
 
 
@@ -181,7 +182,7 @@ google_servidores(){
     echo "LOs servidores de Google son: "
     ping google.com | head -n 4
     echo -e "\n"
-    read -n 1 -s -r -p "Presione ENTER para continuar"
+    read -n 1 -s -r -p "continuar..."
 }
 
 
@@ -191,8 +192,13 @@ mostrar_lista_archivos(){
     echo "Lista de archivos:"
     ls $1
     echo -e "\n"
-    read -n 1 -s -r -p "Presione ENTER para continuar"
+    read -n 1 -s -r -p "continuar..."
 }
+
+
+
+
+
 
 # Ahora voy a hacer un menu desplegable para que pueda el ususario pueda elegir lo que quiera hacer
 # MENU PRINCIPAL
@@ -373,7 +379,61 @@ do
             echo "2_ Restaurar backup al HOME"
             echo "3_ Guardar funciones y mostrar historial"
             echo "4_ Listar backuops disponibles"
-            echo "0_ Volver al menu principal"
+            echo "0_ Volver al menu ion actualiza el sistema.
+
+actualizar_sistema(){
+    echo "Actualizando sistema..."
+    sudo apt update && sudo apt upgrade -y
+    echo -e "\n"
+    read -n 1 -s -r -p "continuar..."
+}
+
+ion actualiza el sistema.
+
+actualizar_sistema(){
+    echo "Actualizando sistema..."
+    sudo apt update && sudo apt upgrade -y
+    echo -e "\n"
+    read -n 1 -s -r -p "continuar..."
+}
+
+
+# Esta funcion lo que hace es mostrarte la lista de los paquetes que se pueden actualizar
+
+actualizar_paquetes_lista(){
+    echo "Lista de paquetes para actualizar:"
+    sudo apt list --upgradable
+    echo -e "\n"
+    read -n 1 -s -r -p "continuar..."
+}
+
+
+# Esta funcion limpia paquetes obsoletos, que ya no sirven
+
+limpiar_cache(){
+    echo "Limpiando archivos no necesitados y no deseados..."
+    sudo apt clean && sudo apt autoremove
+    echo -e "\n"
+    read -n 1 -s -r -p "continuar..."
+}
+# Esta funcion lo que hace es mostrarte la lista de los paquetes que se pueden actualizar
+
+actualizar_paquetes_lista(){
+    echo "Lista de paquetes para actualizar:"
+    sudo apt list --upgradable
+    echo -e "\n"
+    read -n 1 -s -r -p "continuar..."
+}
+
+
+# Esta funcion limpia paquetes obsoletos, que ya no sirven
+
+limpiar_cache(){
+    echo "Limpiando archivos no necesitados y no deseados..."
+    sudo apt clean && sudo apt autoremove
+    echo -e "\n"
+    read -n 1 -s -r -p "continuar..."
+}principal"
             read -n1 -p "Ingresar una opcion [0-4]: " opmenu4
 
             echo ""
